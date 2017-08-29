@@ -1,0 +1,68 @@
+<!--<div>
+    <form method="post">
+        phone:<input type="text" ng-model="phone"><br>
+        password:<input type="password" ng-model="password"><br>
+        <input type="button" ng-click="login()" value="login">
+    </form>
+</div>-->
+
+<div class="login clearfix" style="background: #f7f7fa">
+    <div class="col-lg-4 col-lg-offset-4" style="background: #fff; margin-top: 80px;margin-bottom: 84px;border:1px solid #ccc">
+        <h4 class="h4" style="font-weight:800;">登录</h4>
+        <form name="sign" method="post">
+            <div class="form-group myHei" ng-class="{'has-success':sign.phone.$valid}">
+                <label>Phone:</label>
+
+                <input type="text" class="form-control"  name="phone" placeholder="请输入您的手机号码"
+                ng-model="phone" ng-minlength="7" ng-maxlength="11" required>
+                <span class="glyphicon glyphicon-ok pos" ng-if="sign.phone.$valid"></span>
+
+                <span style="color:red;" ng-show="sign.phone.$error.required">手机号必须填写</span><br>
+                <span class="error" ng-if="(sign.phone.$error.minlength||sign.phone.$error.maxlength)&&
+                   sign.phone.$touched">手机号长度为11位</span>
+            </div>
+
+            <div class="form-group myHei" ng-class="{'has-success':sign.password.$valid}">
+                <label>Password:</label>
+
+                <input type="password" name="password" class="form-control"  placeholder="请输入您的密码"
+                ng-model="password" ng-minlength="6" ng-maxlength="12" required>
+                <span class="glyphicon glyphicon-ok pos" ng-if="sign.password.$valid"></span>
+
+                <span style="color:red;" ng-show="sign.password.$error.required">密码不能为空</span><br>
+
+                <span class="error" ng-if="(sign.password.$error.minlength||sign.password.$error.maxlength)
+                &&sign.password.$touched">密码长度在6位-12位之间</span>
+            </div>
+            <a href="#" class="text-left">忘记密码？</a>
+            <div class="checkbox">
+                <label>
+                    <input type="checkbox" value="">
+                    记住我
+                </label>
+            </div>
+
+            <div class="form-group">
+                <button  ng-click="login()" class="btn btn-primary btn-lg btn-block">登录</button>
+            </div>
+
+        </form>
+        <div class="btm">
+            <hr>
+            <p style="color:#000; text-align: center; padding-bottom: 24px;">第三方登录</p>
+            <div style="text-align: center;">
+                <i class="fa fa-weixin" aria-hidden="true" style="color: #02bb00; border-color: #02bb00;"></i>
+                <i class="fa fa-qq" aria-hidden="true" style="color: #4f94cf;  border-color: #4f94cf;"></i>
+                <i class="fa fa-weibo" aria-hidden="true" style="color: #db2920;  border-color: #db2920;"></i>
+            </div>
+            <p style="background: #f7f7f8; text-align: center;line-height: 44px; border: 1px solid #ccc; margin-top: 14px;margin-left: -15px;margin-right: -15px;">已有账户？<a ui-sref="login" value="注册">登录</a></p>
+        </div>
+    </div>
+    </div>
+</div>
+
+
+
+
+
+

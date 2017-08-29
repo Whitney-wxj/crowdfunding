@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="lib/bootstrap.min.css">
+    <link rel="stylesheet" href="lib/font-awesome-4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/all.min.css">
+</head>
+<body ng-app="myApp">
+    <header>
+        <div class="container">
+            <div class="header_left">
+                <h1>全民<span>创造</span></h1>
+                <ul>
+                    <li><a href="">首页</a></li>
+                    <li><a href="">节目专栏</a></li>
+                    <li><a href="">圈子</a></li>
+                </ul>
+            </div>
+            <div class="header_right">
+                <div class="search"><i class="glyphicon glyphicon-search"></i><input type="text" value=" 输入您想要搜索的内容"></div>
+                <!--<div class="login"><a ui-sref="login">登录</a>&nbsp;&nbsp;&nbsp;&nbsp;<a ui-sref="reg">注册</a></div>-->
+                <div class="login" ng-if="!loginUser">
+                    <a ui-sref="login">登录</a>  &nbsp;&nbsp;&nbsp; <a ui-sref="reg">注册</a>
+                </div>
+                <div class="login" ng-if="loginUser">
+                    <span ui-sref="perspage.perhome" style="cursor: pointer;">{{loginUser.username}}</span>  &nbsp;&nbsp;&nbsp; <a ui-sref="loginout">退出</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <ui-view></ui-view>
+
+    <footer>
+        <div class="container">
+            <ul class="footer_l">
+                <li><a href="">关于全民创造&nbsp;|</a></li>
+                <li><a href="">&nbsp;全民创造用户协议&nbsp;|</a></li>
+                <li><a href="">&nbsp;全民创造风险提示&nbsp;|</a></li>
+                <li><a href="">&nbsp;联系我们</a></li>
+            </ul>
+            <div class="footer_r">
+                <h1>全民<span>创造</span><em>©2015</em></h1>
+            </div>
+        </div>
+    </footer>
+<script src="lib/jquery-1.11.1.min.js"></script>
+<script src="lib/angular.min.js"></script>
+<script src="lib/angular-ui-router.min.js"></script>
+<script src="lib/bootstrap.min.js"></script>
+<script src="js/all.min.js"></script>
+
+</body>
+</html>

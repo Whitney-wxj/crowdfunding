@@ -1,0 +1,207 @@
+
+<div ng-controller="HomeController" class="container">
+    <div id="carousel-example-generic" class="carousel slide " data-ride="carousel">
+        <!-- Indicators -->
+        <ol class="carousel-indicators">
+            <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+            <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+        </ol>
+
+        <!-- Wrapper for slides -->
+        <div class="carousel-inner" role="listbox">
+            <div class="item active">
+                <img src="{{slides[0].img}}">
+            </div>
+            <div class="item">
+                <img src="{{slides[1].img}}">
+            </div>
+        </div>
+        <!-- Controls -->
+        <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
+            <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+        </a>
+        <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
+            <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+        </a>
+    </div>
+</div>
+
+
+<div class="hot">
+    <div class="container pad">
+        <div class="hotLbox col-lg-10">
+            <div><span class="pull-right"><a href="">查看更多</a></span><h4 class="h4" style="font-weight: 800;">热门项目</h4></div>
+            <div>
+                <div class="col-lg-4" style="margin-right:24px;">
+                    <img src="{{hot[0].img}}" style="height: 245px;">
+                </div>
+                <div class="col-lg-6 col-lg-offset-1">
+                    <h5 class="h4" style="font-weight: 800;">{{hot[0].name}}</h5>
+                    <p style="margin-bottom:24px;">{{hot[0].fname}}</p>
+                    <p style="margin-bottom:24px;">{{hot[0].desc}}</p>
+                    <p style="color:#666;"><i class="glyphicon glyphicon-tags"></i><span>&nbsp;话剧</span>&nbsp;&nbsp;&nbsp;&nbsp;<i class="glyphicon glyphicon-blackboard"></i><span>影视推荐</span></p>
+                    <div class="progress" style="margin-top: 10px; height: 18px;" >
+                        <span class=" progress-bar"role="progressbar" ng-style="{width:(hot[0].rprice/hot[0].placement)*100+'%'}">{{hot[0].sp+"%"}}</span>
+                    </div>
+                    <!--<div>
+                        <p><span>{{hot[0].sp+"%"}}</span><span>{{hot[0].placement+"￥"}}</span><span>{{hot[0].rnum}}</span><span>{{hot[0].rday}}</span></p>
+                        <p><span>进度</span><span>支持金额</span><span>支持者</span><span>剩余天数</span></p>
+                    </div>-->
+
+                        <table>
+                            <tr>
+                                <td><span>{{hot[0].sp+"%"}}</span></td>
+                                <td><span>{{"￥"+hot[0].placement}}</span></td>
+                                <td><span>{{hot[0].rnum}}</span></td>
+                                <td><span>{{hot[0].rday}}</span></td>
+                            </tr>
+                            <tr>
+                                <td><span>进度</span></td>
+                                <td><span>支持金额</span></td>
+                                <td><span>支持者</span></td>
+                                <td><span>剩余天数</span></td>
+                            </tr>
+                        </table>
+                    <div style="height:66px;"></div>
+                </div>
+            </div>
+        </div>
+        <div class="hotRbox clo-lg-2">
+            <ul>
+                <li>微电影</li><li>电影</li><li>电视剧</li><li>传统戏曲</li><li style="color:#ff4200;">话剧</li>
+                <li>书画</li><li>相声</li><li>戏剧</li><li>音乐剧</li><li>记录片</li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<div class="newTv">
+    <div class="container pad">
+        <div style="margin-bottom: 34px;"><span class="pull-right"><a ui-sref="listpage">查看全部</a></span><h4 class="h4" style="font-weight: 800;">卫视主播</h4></div>
+        <!--<div class="col-lg-12">
+            <dl class="dl-horizontal col-lg-12">
+                <dt class="col-lg-10 text-left">222</dt>
+                <dd class="col-lg-2 text-right">3333</dd>
+            </dl>
+        </div>-->
+        <!--divA begin-->
+        <div class="col-lg-4">
+                <div class="col-lg-12" style="padding-left: 0px; padding-right: 0px;">
+                    <img class="img-responsive" src="{{new[0].img}}" >
+                </div>
+                <div class="col-lg-12" style="border:1px solid #ccc;">
+                    <h5 class="h5" style="font-weight: 800;">{{new[0].name}}</h5>
+                    <p style="margin-bottom:24px;">{{new[0].fname}}</p>
+                    <p  class="comment_inne" style="margin-bottom:24px; height: 40px;">{{new[0].desc}}</p>
+                    <p style="color:#666;"><i class="glyphicon glyphicon-tags"></i><span>&nbsp;话剧</span>&nbsp;&nbsp;&nbsp;&nbsp;<i class="glyphicon glyphicon-blackboard"></i><span>影视推荐</span></p>
+                    <div class="progress" style="margin-top: 10px; height: 18px;" >
+                        <span class=" progress-bar"role="progressbar" ng-style="{width:(new[0].rprice/new[0].placement)*100+'%'}">{{new[0].sp+"%"}}</span>
+                    </div>
+
+                    <table>
+                        <tr>
+                            <td><span>{{new[0].sp+"%"}}</span></td>
+                            <td><span>{{"￥"+new[0].placement}}</span></td>
+                            <td><span>{{new[0].rnum}}</span></td>
+                            <td><span>{{new[0].rday}}</span></td>
+                        </tr>
+                        <tr>
+                            <td><span>进度</span></td>
+                            <td><span>支持金额</span></td>
+                            <td><span>支持者</span></td>
+                            <td><span>剩余天数</span></td>
+                        </tr>
+                    </table>
+                    <div style="height:66px;"></div>
+                </div>
+
+        </div>
+        <!--divA end-->
+
+        <!--divB begin-->
+        <div class="col-lg-4">
+            <div class="col-lg-12" style="padding-left: 0px; padding-right: 0px;">
+                <img class="img-responsive" src="{{new[1].img}}" >
+            </div>
+            <div class="col-lg-12" style="border:1px solid #ccc;">
+                <h5 class="h5" style="font-weight: 800;">{{new[1].name}}</h5>
+                <p style="margin-bottom:24px;">{{new[1].fname}}</p>
+                <p class="comment_inne" style="margin-bottom:24px;">{{new[1].desc}}</p>
+                <p style="color:#666;"><i class="glyphicon glyphicon-tags"></i><span>&nbsp;话剧</span>&nbsp;&nbsp;&nbsp;&nbsp;<i class="glyphicon glyphicon-blackboard"></i><span>影视推荐</span></p>
+                <div class="progress" style="margin-top: 10px; height: 18px;" >
+                    <span class=" progress-bar"role="progressbar" ng-style="{width:(new[0].rprice/new[1].placement)*100+'%'}">{{new[1].sp+"%"}}</span>
+                </div>
+
+                <table>
+                    <tr>
+                        <td><span>{{new[1].sp+"%"}}</span></td>
+                        <td><span>{{"￥"+new[1].placement}}</span></td>
+                        <td><span>{{new[1].rnum}}</span></td>
+                        <td><span>{{new[1].rday}}</span></td>
+                    </tr>
+                    <tr>
+                        <td><span>进度</span></td>
+                        <td><span>支持金额</span></td>
+                        <td><span>支持者</span></td>
+                        <td><span>剩余天数</span></td>
+                    </tr>
+                </table>
+                <div style="height:66px;"></div>
+            </div>
+
+        </div>
+        <!--divB end-->
+
+        <!--divCbegin-->
+        <div class="col-lg-4">
+            <div class="col-lg-12" style="padding-left: 0px; padding-right: 0px;">
+                <img style="height: 226px; width: 100%;" class="img-responsive" src="{{new[2].img}}" >
+            </div>
+            <div class="col-lg-12" style="border:1px solid #ccc;">
+                <h5 class="h5" style="font-weight: 800;">{{new[2].name}}</h5>
+                <p style="margin-bottom:24px;">{{new[2].fname}}</p>
+                <p  class="comment_inne" style="margin-bottom:24px;">{{new[2].desc}}</p>
+                <p style="color:#666;"><i class="glyphicon glyphicon-tags"></i><span>&nbsp;话剧</span>&nbsp;&nbsp;&nbsp;&nbsp;<i class="glyphicon glyphicon-blackboard"></i><span>影视推荐</span></p>
+                <div class="progress" style="margin-top: 10px; height: 18px;" >
+                    <span class=" progress-bar"role="progressbar" ng-style="{width:(new[2].rprice/new[2].placement)*100+'%'}">{{new[2].sp+"%"}}</span>
+                </div>
+
+                <table>
+                    <tr>
+                        <td><span>{{new[2].sp+"%"}}</span></td>
+                        <td><span>{{"￥"+new[2].placement}}</span></td>
+                        <td><span>{{new[2].rnum}}</span></td>
+                        <td><span>{{new[2].rday}}</span></td>
+                    </tr>
+                    <tr>
+                        <td><span>进度</span></td>
+                        <td><span>支持金额</span></td>
+                        <td><span>支持者</span></td>
+                        <td><span>剩余天数</span></td>
+                    </tr>
+                </table>
+                <div style="height:66px;"></div>
+            </div>
+
+        </div>
+        <!--divC end-->
+    </div>
+</div>
+
+
+<div class="unit container">
+    <h4 class="h4" style="font-weight: 800; line-height: 140px;">合作单位</h4>
+    <!--<ul>
+        <li><img ng-src="{{unit[0].img}}"></li>
+        <li><img ng-src="{{unit[1].img}}"></li>
+        <li><img ng-src="{{unit[2].img}}"></li>
+        <li><img ng-src="{{unit[3].img}}"></li>
+        <li><img ng-src="{{unit[4].img}}"></li>
+    </ul>-->
+
+    <ul ng-repeat="ui in unit">
+        <li><img ng-src="{{ui.img}}"></li>
+    </ul>
+</div>
